@@ -1,3 +1,4 @@
+//using UnityEditor;
 using UnityEngine;
 
 namespace Pixygon.ID {
@@ -11,6 +12,14 @@ namespace Pixygon.ID {
         
         public IdType _idType;
 
+        #if UNITY_EDITOR
+        [ContextMenu("Update ID")]
+        private void UpdateId() {
+            var i = GetFullID;
+            UnityEditor.EditorUtility.SetDirty(this);
+        }
+        #endif
+        
         public int GetFullID {
             get
             {
