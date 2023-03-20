@@ -29,8 +29,8 @@ namespace Pixygon.ID {
             return (from g in (from d in _categories where d._groupName == categoryId select d).FirstOrDefault()?._list where g.Id == id select g).FirstOrDefault();
         }
         public IdObject GetObject(string fullId) {
-            int.TryParse(fullId[..1], out var categoryId);
-            int.TryParse(fullId.Substring(2, 5), out var id);
+            int.TryParse(fullId[..2], out var categoryId);
+            int.TryParse(fullId.Substring(2, 4), out var id);
             var cat = (from d in _categories where d._groupId == categoryId select d).FirstOrDefault()?._list;
             if(cat == null) Debug.Log("Category " + categoryId + " is null!");
             var obj = (from g in cat where g.Id == id select g).FirstOrDefault();
