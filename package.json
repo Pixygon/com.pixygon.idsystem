@@ -1,7 +1,7 @@
 {
   "name": "com.pixygon.idsystem",
   "version": "0.5.0",
-  "displayName": "Pixygon ID",
+  "displayName": "Pixygon - ID",
   "description": "ID-system for Pixygon",
   "unity": "2022.1",
   "unityRelease": "20f1",
